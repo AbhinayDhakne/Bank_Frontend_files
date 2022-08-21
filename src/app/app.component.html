@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav ">     
+      <li class="nav-item">
+        <a class="navbar-brand text-effect" style="font-size: 40px;" >BHARAT BANK</a>
+      </li>&nspar;&nbsp;
+      <li class="nav-item">
+        <a class="btn btn-primary navbar-btn" id="but" href="/users" routerLinkActive="active">
+          <span class="glyphicon glyphicon-th"></span> User-List</a>
+      </li>&nspar;&nbsp;
+      <li class="nav-item">
+        <a class="btn btn-success navbar-btn" id="but" href="/accounts" routerLinkActive="active">
+          <span class="glyphicon glyphicon-th-large"></span> Account-List</a>
+      </li>&nspar;&nbsp;
+      <li class="nav-item">
+        <a class="btn btn-danger navbar-btn" id="but" href="/createuser" routerLinkActive="active">
+          <span class="glyphicon glyphicon-user"></span> Create-User</a>
+      </li>&nspar;&nbsp;
+      <li class="nav-item">
+        <a class="btn btn-warning navbar-btn" id="but" href="/createaccount" routerLinkActive="active">
+          <span class="glyphicon glyphicon-user"></span> Create-Account</a>
+      </li>&nspar;&nbsp;
+      <li class="nav-item">
+        <a class="btn btn-info navbar-btn"  id="but"  href="/about" routerLinkActive="active">
+          <span class="glyphicon glyphicon-certificate"></span> About Us</a>
+      </li>&nspar;&nbsp;
+    </ul>
+    <ul class="nav navbar-nav navbar-right" id="but" style="background-color: #0073ff;">
+      <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
+      <li ><a href="login/" style="color: white;"><span class="glyphicon glyphicon-log-in" ></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+<marquee style="border-style: solid; color: blue; font-size: 20px; border-top-color: orange;border-bottom-color: green;border-width: 10px;">Welcome to BHARAT BANK</marquee>
+<router-outlet></router-outlet>

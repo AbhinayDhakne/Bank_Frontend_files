@@ -1,0 +1,68 @@
+
+
+<br><br>
+<div class="container ">
+  <div class="col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6">
+  <form (ngSubmit)="onSubmit()" [formGroup]="exform" class="form-group form-horizontal">
+    <div class="heading">Update User</div>
+      <div class="form-group">
+          <label for="userid">User Id :</label>
+          <input [ngModelOptions]="{standalone: true}" readonly="readonly" type="text" [(ngModel)]="user.userid" class="form-control" id="userid">
+          <small *ngIf="exform.get('userid')?.invalid && exform.get('userid')?.touched" class="text-danger">User ID is Required</small> 
+      </div>
+      <div class="form-group">
+          <label for="name">Name :</label>
+          <input formControlName="name" type="text" [(ngModel)]="user.name" class="form-control" id="name" placeholder="Enter Name" name="name" required>
+          <small *ngIf="exform.get('name')?.invalid && exform.get('name')?.touched" class="text-danger">Name is Required</small> 
+      </div>
+      <div class="form-group">
+          <label for="email">Email Id :</label>
+          <input formControlName="email" type="text" [(ngModel)]="user.emailid" class="form-control" id="email" placeholder="Enter email" name="email" required>
+          <small *ngIf="exform.get('email')?.invalid && exform.get('email')?.touched" class="text-danger">Email ID is Required</small> 
+      </div>
+      <div class="form-group">
+          <label for="mobile">Mobile Number :</label>
+          <input formControlName="mobile" type="text" [(ngModel)]="user.mobile" class="form-control" id="mobile" placeholder="Enter Mobile Number " name="mobile" required>
+          <small *ngIf="exform.get('mobile')?.invalid && exform.get('mobile')?.touched" class="text-danger">Mobile Number is Required</small> 
+      </div>
+      <div class="form-group">
+          <label for="smobile">Secondary Mobile Number :</label>
+          <input formControlName="smobile" type="text" [(ngModel)]="user.smobile" class="form-control" id="smobile" placeholder="Enter Secondary Mobile Number" name="smobile" required>
+          <small *ngIf="exform.get('smobile')?.invalid && exform.get('smobile')?.touched" class="text-danger">Mobile Number is Required</small> 
+      </div>
+      <div class="form-group">
+          <label for="gender">Gender :</label>
+          <input formControlName="gender" type="text" [(ngModel)]="user.gender" class="form-control" id="gender" placeholder="Enter Gender" name="gender" required>
+          <small *ngIf="exform.get('gender')?.invalid && exform.get('gender')?.touched" class="text-danger">Gender is Required</small> 
+      </div>
+      <div class="form-group">
+          <label for="dob">Date Of Birth (YYYY-MM-DD) :</label>
+          <input formControlName="dob" type="text" [(ngModel)]="user.dob" class="form-control" id="dob" placeholder="Enter Date Of Birth" name="dob" required>
+          <small *ngIf="exform.get('dob')?.invalid && exform.get('dob')?.touched" class="text-danger">Date Of Birth is Required</small> 
+      </div><br>
+      <!-- Button to Open the Modal -->
+      <div class="form-group">
+        <button [disabled]="exform.invalid" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Submit </button>
+        <!-- The Modal -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                <h4 class="modal-title">Form Completed</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">Confirm Submit</div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                <button [disabled]="exform.invalid" type="submit" class="btn btn-success" data-bs-dismiss="modal" >Done</button>
+                </div><br><br>
+            </div>
+        </div>
+        </div>
+      </div><br>
+  </form>
+</div>
+</div>
+<br><br>

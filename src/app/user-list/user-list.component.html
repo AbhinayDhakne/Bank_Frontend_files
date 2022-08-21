@@ -1,0 +1,57 @@
+<br><br>
+<h1 class="text-center" style="font-style:initial;">
+    <span class="glyphicon glyphicon-user"></span> Users</h1><br>
+<div class="container">
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email Id</th>
+            <th>Mobile</th>
+            <th>Secondary Mobile</th>
+            <th>Date Of Birth</th>
+            <th>Gender</th>
+            <th>Accounts LL</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users | paginate: { itemsPerPage: 4, currentPage: page,totalItems:totalLength }">
+            <td>{{user.userid}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.emailid}}</td>
+            <td>{{user.mobile}}</td>
+            <td>{{user.smobile}}</td>
+            <td>{{user.dob}}</td>
+            <td>{{user.gender}}</td>
+            <td>
+             <a href="../show-account/{{user.userid}}" routerLinkActive="active" class = "btn btn-warning"> <span class="glyphicon glyphicon-link"></span> </a>
+            </td>
+            <td><button class="btn btn-success" (click)="updateUser(user.userid)"><span class="glyphicon glyphicon-pencil"></span></button></td>
+            <td><button class="btn btn-danger" (click)="deleteUser(user.userid)"><span class="glyphicon glyphicon-trash"></span></button></td>
+
+            <!-- <td>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal"><span class="glyphicon glyphicon-trash"></span><span>{{user.userid}}</span></button>
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h4 class="modal-title">Confirm to Delete </h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="submit" class="btn btn-success" data-bs-dismiss="modal" (click)="deleteUser(user.userid)">Delete {{user.userid}}</button>
+                        </div><br>
+                    </div>
+                </div>
+                </div>
+            </td> -->
+
+        </tr>
+    </tbody>
+</table>
+<pagination-controls (pageChange)="page=$event" class="my-pagination"></pagination-controls>
+</div>
+<br><br>

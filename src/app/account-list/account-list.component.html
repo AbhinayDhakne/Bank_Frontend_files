@@ -1,0 +1,51 @@
+<br><br>
+<h1 class="text-center" style="font-style:initial;">
+    <span class="glyphicon glyphicon-user"></span> Accounts</h1><br>
+<div class="container">
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Account Number</th>
+            <th>User Id</th>
+            <th>Account Type</th>
+            <th>Account Balance</th>
+            <th>Branch Name</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let acc of accounts | paginate: { itemsPerPage: 4, currentPage: page1,totalItems:totalLength1 }">
+            <td>{{acc.accid}}</td>
+            <td>{{acc.userid}}</td>
+            <td>{{acc.atype}}</td>
+            <td>{{acc.abalance}}</td>
+            <td>{{acc.bname}}</td>
+            <td><button class="btn btn-primary" (click)="updateAccount(acc.accid)"><span class="glyphicon glyphicon-pencil"></span></button></td>
+            <td><button class="btn btn-danger" (click)="deleteAccount(acc.accid)"><span class="glyphicon glyphicon-trash"></span></button></td>
+
+            <!-- <td>
+                Button to Open the Modal
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal"><span class="glyphicon glyphicon-trash"></span></button>
+        The Modal
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                Modal Header
+                <div class="modal-header">
+                <h4 class="modal-title">Confirm to Delete </h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-footer">
+                <button type="submit" class="btn btn-success" data-bs-dismiss="modal" (click)="deleteAccount(acc.accid)">Delete</button>
+                </div><br><br>
+            </div>
+        </div>
+        </div>
+            </td> -->
+        </tr>
+    </tbody>
+</table>
+<pagination-controls (pageChange)="page1=$event" class="my-pagination"></pagination-controls>
+</div>
+<br>
